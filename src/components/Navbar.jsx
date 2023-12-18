@@ -24,10 +24,10 @@ export default function NavBar({user}) {
     <>
     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
       <li className="nav-item">
-        <a className="nav-link" href="#">LogIn</a>
+        <a className="nav-link" href="/login">LogIn</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="#">SignUp</a>
+        <a className="nav-link" href="/signup">SignUp</a>
       </li>
     </ul>
     </>}

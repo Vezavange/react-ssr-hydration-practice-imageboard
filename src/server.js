@@ -5,6 +5,7 @@ import store from 'session-file-store';
 import path from 'path';
 import indexRouter from './routes/indexRouter';
 import apiRouter from './routes/apiRouter';
+import authRouter from './routes/authRouter';
 import jsxRender from './utils/jsxRender';
 
 require('dotenv').config();
@@ -19,7 +20,7 @@ app.set('views', path.join(__dirname, 'components'));
 app.use('/images', express.static(path.join(__dirname, 'public/images')));
 
 const sessionConfig = {
-  name: 'user_sid', // Имя куки для хранения id сессии. По умолчанию - connect.sid
+  name: 'user_sid',
   secret: process.env.SESSION_SECRET ?? 'test', // Секретное слово для шифрования, может быть любым
   resave: true, // Пересохранять ли куку при каждом запросе
   store: new FileStore(),
@@ -44,5 +45,6 @@ app.use((req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/api', apiRouter);
+app.use('/auth', authRouter);
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));
