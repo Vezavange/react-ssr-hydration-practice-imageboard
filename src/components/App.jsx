@@ -1,7 +1,15 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './Navbar';
+import MainPage from './MainPage/MainPage';
 
-export default function App() {
+export default function App({user}) {
   return (
-    <div>App</div>
+    <div className="container" user={user} >
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+      </Routes>
+    </div>
   );
 }

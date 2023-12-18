@@ -16,6 +16,7 @@ const FileStore = store(session);
 app.engine('jsx', jsxRender);
 app.set('view engine', 'jsx');
 app.set('views', path.join(__dirname, 'components'));
+app.use('/images', express.static(path.join(__dirname, 'public/images')));
 
 const sessionConfig = {
   name: 'user_sid', // Имя куки для хранения id сессии. По умолчанию - connect.sid
@@ -42,6 +43,6 @@ app.use((req, res, next) => {
 });
 
 app.use('/', indexRouter);
-app.use('/api/v1', apiRouter);
+app.use('/api', apiRouter);
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));
