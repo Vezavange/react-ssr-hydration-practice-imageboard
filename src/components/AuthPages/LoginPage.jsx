@@ -15,7 +15,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="mb-3">
+    <div className="mb-3 text-bg-warning auth-container">
       <div className="form-container d-flex min-vh-100 justify-content-center align-items-center">
         <form onSubmit={submitHandler}>
           <div className="form-group">
