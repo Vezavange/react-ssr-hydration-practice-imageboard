@@ -13,6 +13,14 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/newpost', (req, res) => {
+  try {
+    res.render('Layout', {});
+  } catch (e) {
+    console.log(e);
+  }
+});
+
 router.get('/signup', (req, res) => {
     try {
       res.render('Layout', {});

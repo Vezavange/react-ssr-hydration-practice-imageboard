@@ -17,7 +17,6 @@ const FileStore = store(session);
 app.engine('jsx', jsxRender);
 app.set('view engine', 'jsx');
 app.set('views', path.join(__dirname, 'components'));
-app.use('/images', express.static(path.join(__dirname, 'public/images')));
 
 const sessionConfig = {
   name: 'user_sid',

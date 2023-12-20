@@ -9,6 +9,7 @@ export default function NavBar({ user }) {
   };
 
   return (
+    <div className='navbar-container'>
     <nav className="navbar navbar-expand-lg bg-warning">
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="/">ImageBoard</NavLink>
@@ -23,7 +24,7 @@ export default function NavBar({ user }) {
           {user ? (
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link" href="#">Add new</a>
+                <a className="nav-link" href="/newpost">Add new</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="/logout">LogOut</a>
@@ -42,5 +43,6 @@ export default function NavBar({ user }) {
         </div>
       </div>
     </nav>
+    </div>
   );
 }
