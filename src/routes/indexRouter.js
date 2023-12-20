@@ -1,10 +1,12 @@
 import express from 'express';
+import { Post } from '../../db/models'
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
     try { 
-        const initState = {};
+        const posts = await Post.findAll();
+        const initState = { posts };
         res.render('Layout', initState);
     } catch (e) {
         console.log(e);

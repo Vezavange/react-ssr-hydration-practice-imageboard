@@ -23,10 +23,10 @@ export default function NavBar({ user }) {
           {user ? (
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link" href="#">Add new Image</a>
+                <a className="nav-link" href="#">Add new</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">LogOut</a>
+                <a className="nav-link" href="/logout">LogOut</a>
               </li>
             </ul>
           ) : (
@@ -39,10 +39,6 @@ export default function NavBar({ user }) {
               </li>
             </ul>
           )}
-          <form className="d-flex" role="search">
-            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-            <button className="btn btn-outline-dark" type="submit">Search</button>
-          </form>
         </div>
       </div>
     </nav>
