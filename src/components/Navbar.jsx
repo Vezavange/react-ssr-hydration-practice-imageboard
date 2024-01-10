@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
 
 export default function NavBar({ user }) {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const handleToggleClick = () => {
     setIsNavOpen(!isNavOpen);
+  };
+
+  const logoutHandler = async () => {
+    await axios('/auth/logout');
   };
 
   return (
@@ -27,7 +32,7 @@ export default function NavBar({ user }) {
                 <a className="nav-link" href="/newpost">Add new</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/logout">LogOut</a>
+                <a className="nav-link" onClick={logoutHandler} href="/">LogOut</a>
               </li>
             </ul>
           ) : (

@@ -10,7 +10,7 @@ export default function LoginPage() {
     );
 
     if (response.status === 200) {
-      window.location = "/books";
+      window.location = "/";
     }
   };
 
