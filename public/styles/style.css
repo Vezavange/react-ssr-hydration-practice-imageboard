@@ -1,0 +1,21 @@
+.container {
+    align-self: center;
+}
+
+.card-img-bottom {
+    align-self: center;
+    max-height: 563px;
+    object-fit: contain;
+}
+
+.navbar-container {
+    margin-bottom: 4px;
+}
+
+.card-text {
+    font-size: 12px;
+}
+
+.card {
+    margin-bottom: 4px;
+}
